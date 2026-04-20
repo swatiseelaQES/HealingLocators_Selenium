@@ -17,24 +17,6 @@ Recovers test execution when possible
 Logs healing behavior
 Generates a simple healing report
 
-**🏗️ Project Structure**
-.
-├── data/
-│   ├── config.yaml
-│   └── locators.py
-├── healing/
-│   ├── healing_engine.py
-│   └── healing_reporter.py
-├── pages/
-│   ├── base_page.py
-│   └── search_page.py
-├── tests/
-│   ├── base_test.py
-│   └── test_search.py
-├── results/
-├── requirements.txt
-└── README.md
-
 **Setup:**
 Assuming python, pip and venv are installed correctly:
 
