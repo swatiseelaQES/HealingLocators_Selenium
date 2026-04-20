@@ -1,0 +1,8 @@
+browser: chrome
+headless: false
+wait_timeout: 10
+
+healing:
+  enabled: true
+  screenshot_on_heal: true
+  report_path: results/healing_report.json
