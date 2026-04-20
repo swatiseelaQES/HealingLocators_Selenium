@@ -35,6 +35,20 @@ Generates a simple healing report
 ├── requirements.txt
 └── README.md
 
+**Setup:**
+Assuming python, pip and venv are installed correctly:
+
+Download or clone this repository
+Open a terminal
+Go to the project root directory "/selenium-python-example/".
+Create a virtual environment:
+(UBUNTU): python3 -m venv .venv
+(WINDOWS): py -m venv venv
+Activate the virtual environment executing the following script:
+(UBUNTU): source .venv/bin/activate
+(WINDOWS): .\venv\Scripts\activate
+Execute the following command to download the necessary libraries: pip install -r requirements.txt
+
 
 **🧪 Running the tests**
 1. Install dependencies
