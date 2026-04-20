@@ -13,6 +13,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 from healing.healing_engine import HealingEngine
 from healing.healing_reporter import HealingReporter
+from healing.locator_memory import LocatorMemory
 
 os.environ["WDM_LOG_LEVEL"] = "0"
 
@@ -25,7 +26,7 @@ user_agent = (
 
 def config():
     path = Path(__file__).parent / "../data/config.yaml"
-    with open(path) as config_file:
+    with open(path, encoding="utf-8") as config_file:
         return yaml.safe_load(config_file)
 
 
@@ -64,6 +65,12 @@ class BaseTest:
         report_path = healing_cfg.get("report_path", "results/healing_report.json")
         screenshot_on_heal = healing_cfg.get("screenshot_on_heal", True)
 
+        locator_memory_cfg = cfg.get("locator_memory", {})
+        locator_memory_enabled = locator_memory_cfg.get("enabled", True)
+        locator_memory_path = locator_memory_cfg.get(
+            "path", "results/locator_memory.json"
+        )
+
         if browser == "chrome":
             options = build_chrome_options(headless)
             self.driver = webdriver.Chrome(
@@ -80,12 +87,17 @@ class BaseTest:
             raise Exception("Incorrect Browser")
 
         self.wait = WebDriverWait(self.driver, wait_timeout)
+
         self.healing_reporter = HealingReporter(report_path=report_path)
+        self.locator_memory = LocatorMemory(memory_path=locator_memory_path)
+
         self.healing_engine = HealingEngine(
             driver=self.driver,
             wait=self.wait,
             reporter=self.healing_reporter,
             screenshot_on_heal=screenshot_on_heal,
+            memory=self.locator_memory,
+            memory_enabled=locator_memory_enabled,
         )
 
         yield self.wait, self.driver

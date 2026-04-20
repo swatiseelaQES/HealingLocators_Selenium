@@ -6,3 +6,7 @@ healing:
   enabled: true
   screenshot_on_heal: true
   report_path: results/healing_report.json
+
+locator_memory:
+  enabled: true
+  path: results/locator_memory.json
