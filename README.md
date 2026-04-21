@@ -20,22 +20,20 @@ Generates a simple healing report
 **Setup:**
 Assuming python, pip and venv are installed correctly:
 
-Download or clone this repository
-Open a terminal
-Go to the project root directory "/selenium-python-example/".
-Create a virtual environment:
-(UBUNTU): python3 -m venv .venv
-(WINDOWS): py -m venv venv
-Activate the virtual environment executing the following script:
-(UBUNTU): source .venv/bin/activate
-(WINDOWS): .\venv\Scripts\activate
-Execute the following command to download the necessary libraries: pip install -r requirements.txt
+1. Download or clone this repository
+2. Open a terminal
+3. Go to the project root directory 
+4. Create a virtual environment:
+   (UBUNTU): python3 -m venv .venv
+    (WINDOWS): py -m venv venv
+5. Activate the virtual environment executing the following script:
+    (UBUNTU): source .venv/bin/activate
+    (WINDOWS): .\venv\Scripts\activate
+6. Execute the following command to download the necessary libraries: pip install -r requirements.txt
 
 
 **🧪 Running the tests**
-1. Install dependencies
-pip install -r requirements.txt
-2. Run tests
+1. Run tests
 pytest -v --html=results/report.html
 
 
@@ -63,6 +61,7 @@ HTML report for healing events
 Optional AI-assisted locator suggestions
 
 **✍️ Author**
+More details: https://medium.com/ai-in-quality-assurance/you-dont-need-ai-to-repair-your-broken-locators-you-can-do-it-too-b796f25c0c60
 Swati Seela
 Quality Engineering Sense
 
